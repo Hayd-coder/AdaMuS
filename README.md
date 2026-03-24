@@ -9,15 +9,6 @@ The framework implements the **AdaMuS** algorithm for dimensionally unbalanced d
 
 Multi-view learning primarily aims to fuse multiple features to describe data comprehensively. Most prior studies implicitly assume that different views share similar dimensions. In practice, however, severe dimensional disparities often exist among different views, leading to the unbalanced multi-view learning issue. For example, in emotion recognition tasks, video frames often reach dimensions of , while physiological signals comprise only dimensions. Existing methods typically face two main challenges for this problem: (1) They often bias towards high-dimensional data, overlooking the low-dimensional views. (2) They struggle to effectively align representations under extreme dimensional imbalance, which introduces severe redundancy into the low-dimensional ones. To address these issues, we propose the Adaptive Multi-view Sparsity Learning (AdaMuS) framework. First, to prevent ignoring the information of low-dimensional views, we construct view-specific encoders to map them into a unified dimensional space. Given that mapping low-dimensional data to a high-dimensional space often causes severe overfitting, we design a parameter-free pruning method to adaptively remove redundant parameters in the encoders. Furthermore, we propose a sparse fusion paradigm that flexibly suppresses redundant dimensions and effectively aligns each view. Additionally, to learn representations with stronger generalization, we propose a self-supervised learning paradigm that obtains supervision information by constructing similarity graphs. Extensive evaluations on a synthetic toy dataset and seven real-world benchmarks demonstrate that AdaMuS consistently achieves superior performance and exhibits strong generalization across both classification and semantic segmentation tasks.
 
-## Dataset
-
-This framework supports multi-view datasets (e.g., `.mat` files).
-Please place your dataset in the `data/` directory and configure the parameters in `main.py` accordingly.
-
-- **Data Format**: The code typically expects a `.mat` file containing multi-view features (e.g., cell array `X`) and labels (`Y` or `gt`).
-
-_Note: The `MultiViewDataset` class in `data.py` handles data loading._
-
 ## Prerequisites
 
 - Python 3.x
