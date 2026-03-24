@@ -11,13 +11,12 @@ Multi-view learning primarily aims to fuse multiple features to describe data co
 
 ## Dataset
 
-The project is pre-configured for the **100Leaves** dataset (`100Leaves.mat`), located in the `data/` directory.
+This framework supports multi-view datasets (e.g., `.mat` files).
+Please place your dataset in the `data/` directory and configure the parameters in `main.py` accordingly.
 
-- **Classes**: 100 (Plant Species)
-- **Samples**: 1600 (16 per class)
-- **Views**: 3 (Shape, Texture, Margin) - each with dimension 64.
+- **Data Format**: The code typically expects a `.mat` file containing multi-view features (e.g., cell array `X`) and labels (`Y` or `gt`).
 
-_Note: The dataset loader automatically handles the 100Leaves structure._
+_Note: The `MultiViewDataset` class in `data.py` handles data loading._
 
 ## Prerequisites
 
@@ -63,7 +62,7 @@ pip install torch numpy scipy scikit-learn matplotlib
 - `data.py`: Handles dataset loading and preprocessing for Mfeat.
 - `cluster.py`: Implements K-Means clustering and metric calculation.
 - `tsne.py`: t-SNE visualization utility.
-- `data/`: Contains the dataset file 
+- `data/`: Contains the dataset file
 
 ## License
 
