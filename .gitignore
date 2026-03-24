@@ -141,8 +141,13 @@ cython_debug/
 
 # Project Specific
 data/
-best_para/
-prune_para/
+# Allow 100Leaves.mat in data/
+!data/100Leaves.mat
+best_para/*
+!best_para/.gitkeep
+prune_para/*
+!prune_para/.gitkeep
 w_para/
 *.pth
 *.mat
+!data/100Leaves.mat
